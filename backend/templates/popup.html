@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="title-bar">
+        <h1>Image Upload</h1>
+    </div>
+    <!-- <div class="controls">
+        <button id="action-button">Click Me</button>
+        <textarea id="text-area" rows="4" placeholder="Enter your text here..."></textarea>
+    </div> -->
+    <div class="hero">
+        <label for="input-file" id="drop-area">
+            <input hidden type="file" accept="image/*" id="input-file">
+            <div id="img-view">
+                <img src="508-icon.png" alt="Upload Icon">
+                <p>Drag and drop <br> or click here to upload image</p>
+                <span>Upload any image</span>
+                <div class="overlay">Drop your image here</div>
+            </div> 
+        </label>
+    </div>
+    <div>
+        <h2 id="converted_text">Your text will show here</h2>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

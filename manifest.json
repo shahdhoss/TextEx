@@ -1,0 +1,18 @@
+{
+    "manifest_version": 3,
+    "name": "Picture to text converter",
+    "description": "A google chrome extension that lets you convert a picture to text",
+    "permissions": [
+        "activeTab",
+        "http://127.0.0.1:5000/upload_image"  
+    ],
+    "version": "1.0",
+    "action": {
+      "default_popup": "backend/templates/popup.html",
+      "default_icon": {
+        "16":"assets/2-removebg-preview.png",
+        "24":"assets/2-removebg-preview.png",
+        "32":"assets/2-removebg-preview.png"
+        }
+    }
+  }
