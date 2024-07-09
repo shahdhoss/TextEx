@@ -5,6 +5,10 @@ const overlay = dropArea.querySelector(".overlay");
 
 inputFile.addEventListener("change", uploadImage);
 
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('copy-button').addEventListener('click', copytext);
+});
+
 function uploadImage() {
     let file = inputFile.files[0];
     let imglink = URL.createObjectURL(file);
@@ -20,7 +24,7 @@ dropArea.addEventListener("dragover", function(e) {
 
 dropArea.addEventListener("dragenter", function() {
     dropArea.classList.add("hover");
-    imageView.innerText = "Drop it like it's hot!";
+    imageView.innerHTML = `<h2> Drop it like it's hot! </h2>`;
 });
 
 dropArea.addEventListener("dragleave", function() {
@@ -34,10 +38,15 @@ dropArea.addEventListener("drop", function(e) {
     uploadImage();
 });
 
+function copytext() {
+    var copyText = document.getElementById("converted_text").innerText;
+    console.log(copyText)
+    navigator.clipboard.writeText(copyText);
+}
+
 function sendImage(file) {
     let formData = new FormData();
     formData.append('image', file);
-
     fetch('http://127.0.0.1:5000/upload_image', {
         method: 'POST',
         body: formData,
@@ -52,7 +61,7 @@ function sendImage(file) {
         return response.json();
     })
     .then(data => {
-        // console.log('Success:', data);
+        document.getElementById("copy-button").style.display='block'
         document.getElementById("converted_text").innerHTML=`<p>${data.string}<p>`
     })
     .catch((error) => {

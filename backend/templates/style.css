@@ -114,12 +114,12 @@ body {
     align-items: center;
     justify-content: center;
     font-family: Arial, sans-serif;
-    object-fit: cover; /* Cover the container without distortion */
-    object-position: center;
+    background-position: center;
+    background-size: cover;
 }
 
 #img-view img {
-    width: 80px;
+    width: 70px;
     margin-top: 10px;
 }
 
@@ -148,3 +148,41 @@ p {
     white-space: pre-wrap;  /* Preserve whitespace and allow wrapping */
 }
 
+button {
+    background-color: #242629;
+    border: 1px solid #777;
+    border-radius: 0.25rem; /* Smaller border radius */
+    color: white;
+    font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 0.75rem; /* Smaller font size */
+    font-weight: 600;
+    line-height: 1rem; /* Adjust line height */
+    padding: 0.5rem 0.75rem; /* Smaller padding */
+    text-align: center;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+  
+  button:hover {
+    background-color: #777;
+  }
+  
+  button:focus {
+    outline: 2px solid rgba(0, 0, 0, 0.1);
+    outline-offset: 2px;
+  }
+  
+  button:focus-visible {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  
